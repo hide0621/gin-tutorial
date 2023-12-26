@@ -14,6 +14,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/books", handler.GetBooks)
+	r.POST("/books", handler.CreateBooks)
 
 	r.Run()
 
