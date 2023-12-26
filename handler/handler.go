@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"errors"
 	"gin-tutorial/models"
 	"net/http"
 
@@ -19,8 +20,34 @@ func CreateBooks(c *gin.Context) {
 		return
 	}
 
-	books := append(models.Books, newBook)
+	models.Books = append(models.Books, newBook)
 
-	c.IndentedJSON(http.StatusCreated, books)
+	c.IndentedJSON(http.StatusCreated, newBook)
+
+}
+
+func BookById(c *gin.Context) {
+
+	id := c.Param("id")
+	book, err := getBookById(id)
+	if err != nil {
+		c.IndentedJSON(http.StatusNotFound, gin.H{
+			"message": "Book not found",
+		})
+		return
+	}
+	c.IndentedJSON(http.StatusOK, book)
+
+}
+
+func getBookById(id string) (*models.Book, error) {
+
+	for i, b := range models.Books {
+		if b.ID == id {
+			return &models.Books[i], nil
+		}
+	}
+
+	return nil, errors.New("book not found")
 
 }
