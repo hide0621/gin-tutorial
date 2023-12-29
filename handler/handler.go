@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// @Summary Booksのデータをjsonにして、それをインデントして返す
+// @Summary Get a list of Books
 // @Produce json
 // @Success 200 {int} indented json
 // @Router /books [Get]

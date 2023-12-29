@@ -10,5 +10,5 @@ paths:
           description: OK
           schema:
             type: int
-      summary: Booksのデータをjsonにして、それをインデントして返す
+      summary: Get a list of Books
 swagger: "2.0"

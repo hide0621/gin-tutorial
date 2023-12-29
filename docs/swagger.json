@@ -9,7 +9,7 @@
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Booksのデータをjsonにして、それをインデントして返す",
+                "summary": "Get a list of Books",
                 "responses": {
                     "200": {
                         "description": "OK",
