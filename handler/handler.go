@@ -8,6 +8,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary Booksのデータをjsonにして、それをインデントして返す
+// @Produce json
+// @Success 200 {int} indented json
+// @Router /books [Get]
 func GetBooks(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, models.Books)
 }
