@@ -1,0 +1,14 @@
+info:
+  contact: {}
+paths:
+  /books:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: int
+      summary: Booksのデータをjsonにして、それをインデントして返す
+swagger: "2.0"
