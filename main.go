@@ -7,6 +7,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// titleとversionのアノテーションはmain関数に紐付ける
+// versionアノテーションはAPIのバージョンのことでSwaggerのバージョンではない
+
+// @title gin API Sample
+// @version 1.0
 func main() {
 
 	// practice.P1()

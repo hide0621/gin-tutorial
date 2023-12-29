@@ -12,6 +12,8 @@ definitions:
     type: object
 info:
   contact: {}
+  title: gin API Sample
+  version: "1.0"
 paths:
   /books:
     get:
