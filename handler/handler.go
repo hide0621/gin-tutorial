@@ -8,9 +8,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Successアノテーションでは{}内の型と対応するデータ型(構造体など)を書く
+
 // @Summary Get a list of Books
 // @Produce json
-// @Success 200 {int} indented json
+// @Success 200 {object} models.Book
 // @Router /books [Get]
 func GetBooks(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, models.Books)
