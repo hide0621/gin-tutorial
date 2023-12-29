@@ -1,3 +1,15 @@
+definitions:
+  models.Book:
+    properties:
+      author:
+        type: string
+      id:
+        type: string
+      quantity:
+        type: integer
+      title:
+        type: string
+    type: object
 info:
   contact: {}
 paths:
@@ -9,6 +21,6 @@ paths:
         "200":
           description: OK
           schema:
-            type: int
-      summary: Booksのデータをjsonにして、それをインデントして返す
+            $ref: '#/definitions/models.Book'
+      summary: Get a list of Books
 swagger: "2.0"
